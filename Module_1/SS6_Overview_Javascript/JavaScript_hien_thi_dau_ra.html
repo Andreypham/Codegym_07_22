@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Hiển thị đầu ra</title>
+</head>
+<body>
+<button type="button" onclick="showMessage();">Click Me!</button>
+<script>
+  function showMessage(){
+    alert("Xin chào")
+  }
+</script>
+<br>
+<button type="button" onclick="showMessage2()">Click Me 2!</button>
+<div id="messageDiv"></div>
+<script>
+  function showMessage2(){
+    document.getElementById("messageDiv").innerHTML = "Xin Chào 2"
+  }
+</script>
+
+<button type="button" onclick="showMessage3_4();">Click me 3_4!</button>
+<script>
+  function showMessage3_4(){
+    document.write("Xin chào 3")
+    console.log("Xin chào 4")
+  }
+</script>
+</body>
+</html>
