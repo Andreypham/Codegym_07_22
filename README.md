@@ -1,6 +1,6 @@
 # Codegym_07_22
-Start the course: 29/07/2022
-Be strong and keep going
+Start the course: 29.07.2022 /////
+Be strong and keep going ////// 
 Головы вверх гордо поднять
 За тебя, Родина-мать!
 Мы до конца будем стоять
