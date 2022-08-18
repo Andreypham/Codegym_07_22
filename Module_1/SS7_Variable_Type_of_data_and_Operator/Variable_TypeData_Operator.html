@@ -6,12 +6,21 @@
 </head>
 <body>
 <script>
+    // tinh diem trung binh
   let input_math_score = parseInt(prompt("Enter math score"));
   let input_physic_score = parseInt(prompt("Enter physic score"));
   let input_chemistry_score = parseInt(prompt("Enter chemistry score"));
   let ave = Math.round((input_math_score+input_physic_score+input_chemistry_score)/3*10)/10;
   // Math.round() la ham lam tron,
-  document.write("Average = "+ ave)
+  document.write("Average = "+ ave+ "<br>");
+    // C-->F
+    let in_C = parseInt(prompt("Enter temperature in Celsius: "))
+    let out_F = in_C*1.8+32;
+  document.write("Temperature in Fahrenheit: "+out_F+"<br>");
+  // Dien tich hinh tron
+    let in_r = parseInt(prompt("Enter radius:c "))
+    let out_square = 3.14*in_r*in_r;
+    document.write("Circle square: "+ out_square+"<br>")
 
 </script>
 </body>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcalator</title>
+  <style>
+    td{
+      width: 200px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<form>
+  <table>
+    <tr>
+      <th>First number</th>
+      <th>Second number</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td><input type="text" id="first_number"> </td>
+      <td><input type="text" id="second_number"></td>
+      <td><p id="result"></p></td>
+    </tr>
+  </table>
+  <input type="button" onclick="sum_number()" value="Sum" style="width: 150px">
+  <input type="button" onclick="sub_number()" value="Sub" style="width: 150px">
+  <input type="button" onclick="multi_number()" value="multi" style="width: 150px">
+  <input type="button" onclick="div_number()" value="Div" style="width: 150px">
+</form>
+<script>
+  function sum_number(a,b){
+    let st = parseInt(document.getElementById("first_number").value)
+    let nd = parseInt(document.getElementById("second_number").value)
+    let sum = st+nd
+    document.getElementById("result").innerHTML=sum;
+  }
+
+  function sub_number(){
+    let st = parseInt(document.getElementById("first_number").value)
+    let nd = parseInt(document.getElementById("second_number").value)
+    let sub = st-nd
+    document.getElementById("result").innerHTML=sub;
+  }
+
+  function multi_number(){
+    let st = parseInt(document.getElementById("first_number").value)
+    let nd = parseInt(document.getElementById("second_number").value)
+    let multi = st*nd
+    document.getElementById("result").innerHTML=multi;
+  }
+  function div_number(){
+    let st = parseInt(document.getElementById("first_number").value)
+    let nd = parseInt(document.getElementById("second_number").value)
+    let div = Math.round(st/nd*1000)/1000;
+    document.getElementById("result").innerHTML=div;
+  }
+
+</script>
+</body>
+</html>
