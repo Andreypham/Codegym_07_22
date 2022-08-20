@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</title>
+</head>
+<body>
+<script>
+  let mark = parseInt(prompt("Enter your mark:"));
+  if (mark<0||mark>100){
+    alert("Bạn cần nhập điểm số nằm trong khoản 0-100!")
+  }else{
+    if (mark>90){
+      alert("Bạn đạt loại xuất sắc")
+    }else{
+      if (mark>80) {
+        alert("Bạn đạt loại giỏi")
+      }else if (mark>65){
+        alert("Bạn đạt loại khá")
+      }else if(mark>50) {
+        alert("Bạn đạt loại trung bình")
+      } else {
+        alert("Bạn đạt loại yếu")
+      }
+    }
+  }
+
+</script>
+
+</body>
+</html>

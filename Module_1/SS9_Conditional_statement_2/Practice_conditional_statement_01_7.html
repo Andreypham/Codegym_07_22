@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</title>
+</head>
+<body>
+<script>
+  let minute = parseInt(prompt("Nhập số phút  đã gọi:"))
+  let cost = 0;
+  if (minute < 120) {
+    cost = minute * 2;
+  } else {
+    cost = 120*2 + (minute-120)*1.5;
+  }
+  alert("Số tiền cước điện thoại bạn phải trả: "+cost+"$")
+</script>
+</body>
+</html>
