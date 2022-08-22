@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+  // in ra 20 số nguyên tố đầu tiên
+  function check_prime(number){
+    let count = 0;
+    num = Math.floor(Math.sqrt(number));
+    for (let i=1;i<=num;i++){
+      if (number%i ===0){
+        count = count +1;
+      }
+    }
+    return count === 1;
+  }
+  let count=0;
+  let m = 1;
+  while (count<18) {
+    if (check_prime(m)){
+      count = count +1;
+      document.write(m+" ");
+    }
+    m = m +1;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</title>
+</head>
+<body>
+<script>
+  let a1=1, a2=1, sum;
+  do{
+    sum = a1+a2;
+    a1=a2;
+    a2=sum;
+  }while (sum%5!==0)
+  document.write(sum);
+</script>
+</body>
+</html>
