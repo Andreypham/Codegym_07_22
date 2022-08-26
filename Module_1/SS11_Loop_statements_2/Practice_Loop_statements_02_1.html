@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1: In dãy Fibonacci</title>
+</head>
+<body>
+<script>
+  let n = parseInt(prompt("Enter number of Fibonacci: "))
+  let a1=1, a2=1, sum;
+  document.write(a1+" "+a2+" ");
+  for(let i=3;i<=n;i++){
+    sum = a1+a2;
+    document.write(sum+" ");
+    a1=a2;
+    a2=sum;
+  }
+</script>
+</body>
+</html>
