@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8-Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</title>
+</head>
+<body>
+<script>
+    let a = [], len = parseInt(prompt("number element: ")), i, j;
+    for (i=0;i<len;i++){
+    a[i] = parseInt(prompt("Enter element "+(i+1)+":"))
+  }
+  //sort element
+  for(i=0;i<len;i++){
+      for(j=i;j>0;j--) if (a[j] > a[j - 1]) {
+          let t = a[j]
+          a[j] = a[j - 1]
+          a[j - 1] = t
+      }
+  }
+  document.writeln(a)
+</script>
+</body>
+</html>

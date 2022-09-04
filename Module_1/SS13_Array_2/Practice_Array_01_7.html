@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7- Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng</title>
+</head>
+<body>
+<script>
+  let a =[];
+  let len = parseInt(prompt("number element: "));
+  let i;
+  let boo= false;
+  for (i=0;i<len;i++){
+    a[i] = parseInt(prompt("Enter element "+(i+1)+":"))
+  }
+  let V = parseInt(prompt("Enter number V ="))
+  document.writeln(a);
+  document.writeln("<br> Number V = " +V+"<br>")
+  for(i=0;i<len;i++){
+    if (a[i]===V){
+      for(let j=i;j<len;j++){
+        a[j]=a[j+1];
+      }
+      boo = true;
+      a[len-1]=0;
+    }
+  }
+  document.writeln(a)
+  if (!boo) {document.writeln("<br> V is not in the array");}
+</script>
+</body>
+</html>

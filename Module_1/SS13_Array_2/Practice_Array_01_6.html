@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6-Chương trình tìm xem V có nằm trong mảng số nguyên không?</title>
+</head>
+<body>
+<script>
+  let a =[];
+  let len = parseInt(prompt("number element: "));
+  let i;
+  let boo= false;
+  for (i=0;i<len;i++){
+    a[i] = parseInt(prompt("Enter element "+(i+1)+":"))
+  }
+  let V = parseInt(prompt("Enter number V ="))
+  document.writeln(a);
+  document.writeln("<br> Number V = " +V)
+  for(i=0;i<a.length;i++){
+    if (a[i]===V){
+      document.writeln("<br> V is in the array");
+      boo = true;
+      break;
+    }
+  }
+  if (!boo) {document.writeln("<br> V is not in the array");}
+</script>
+</body>
+</html>

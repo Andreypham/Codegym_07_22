@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</title>
+</head>
+<body>
+<script>
+  //let a = [-5,20,45,8,9,15,0,22,6,-3];
+  let a =[];
+  let len = parseInt(prompt("number element: "));
+  let i;
+  for (i=0;i<len;i++){
+    a[i] = parseInt(prompt("Enter element "+(i+1)+":"))
+  }
+  let first = 0, last = a.length-1;
+  while (first<last){
+    let b=a[last];
+    a[last] = a[first];
+    a[first] = b;
+    first++;
+    last--;
+  }
+  document.write(a)
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+  <style>
+    th, td {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+<form>
+  <table>
+    <tr>
+      <th>English</th>
+      <th><input type="button" onclick="searchWord()" value="SEARCH"> </th>
+      <th>Vietnamese</th>
+    </tr>
+    <tr>
+      <td><input type="text" id="eng"></td>
+      <td></td>
+      <td><input type="text" id="vnd"></td>
+    </tr>
+  </table>
+</form>
+<script>
+  function searchWord(){
+    let en = ["dog","cat","tiger","lion"];
+    let vn = ["chó","mèo","hổ","sư tử"];
+    let i;
+    for (i=0; i<en.length;i++){
+      if (document.getElementById("eng").value == en[i]) {
+        document.getElementById("vnd").value = vn[i];
+      }
+      if (document.getElementById("vnd").value == vn[i]) {
+        document.getElementById("eng").value = en[i];
+      }
+    }
+  }
+</script>
+</body>
+</html>
