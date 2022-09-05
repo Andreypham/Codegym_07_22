@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+  function check_prime(number){
+    let count = 0;
+    num = Math.floor(Math.sqrt(number));
+    for (let i=1;i<=num;i++){
+      if (number%i ===0){
+        count = count +1;
+      }
+    }
+    if (count ===1) {
+      alert(number +" is prime")
+    } else {
+      alert(number +" not is prime")
+    }
+  }
+  let a = parseInt(prompt("Enter a number:"))
+  check_prime(a)
+</script>
+</body>
+</html>

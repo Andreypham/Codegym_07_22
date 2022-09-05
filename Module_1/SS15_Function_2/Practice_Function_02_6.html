@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.</title>
+</head>
+<body>
+<script>
+  let a = parseInt(prompt("Enter a number: "))
+  function positiveNumber(a){
+    if (a>0) {
+      return true;
+    }else {
+      return false;
+    }
+  }
+  if (positiveNumber(a)){
+    alert(a+" is positive number")
+  }else{
+    alert(a+" isn't positive number")
+  }
+</script>
+</body>
+</html>

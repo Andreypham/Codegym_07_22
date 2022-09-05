@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</title>
+</head>
+<body>
+<input type="text" id="num">
+<br>
+<input type="button" value="Square" onclick="square()">
+<br>
+<div id="showResult"></div>
+<script>
+  function squareNumber(a){
+    return a*a;
+  }
+  function square(){
+    let a = parseInt(document.getElementById("num").value);
+    document.getElementById("showResult").innerHTML = squareNumber(a)
+  }
+</script>
+</body>
+</html>

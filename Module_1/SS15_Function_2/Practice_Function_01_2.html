@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm. Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.</title>
+</head>
+<body>
+<input type="text" id="num" style="width: 50px;">
+<input type="button" value="Increase Number" onclick="increaseNumber()">
+<div id="showResult"></div>
+<script>
+  function increase(number){
+    return ++number
+  }
+  function increaseNumber(){
+      let a = parseInt(document.getElementById("num").value)
+      document.getElementById("showResult").innerHTML = increase(a)
+  }
+
+</script>
+</body>
+</html>

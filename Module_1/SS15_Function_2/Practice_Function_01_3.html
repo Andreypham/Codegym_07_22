@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3: Tạo hàm nhận vào hai tham số.</title>
+</head>
+<body>
+<input type="text" id="num1">
+<br>
+<input type="text" id="num2">
+<input type="button" value="Check" onclick="checksum()">
+<br>
+<div id="showResult"></div>
+<script>
+  function sumAlert(a,b){
+    if (a>b){
+      alert(a+">"+b)
+    } else {
+      document.getElementById("showResult").innerHTML= "Sum = "+ (a+b);
+    }
+  }
+  function checksum(){
+    let a=parseInt(document.getElementById("num1").value)
+    let b=parseInt(document.getElementById("num2").value)
+    sumAlert(a,b)
+  }
+
+
+</script>
+</body>
+</html>

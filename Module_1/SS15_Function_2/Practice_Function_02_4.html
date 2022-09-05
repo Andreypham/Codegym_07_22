@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.</title>
+</head>
+<body>
+<input type="text" id="num">
+<br>
+<input type="button" value="Check" onclick="check()">
+<br>
+<div id="showResult"></div>
+<script>
+  function checkNumber(a){
+    if (isNaN(parseInt(a))){
+      return false
+    }else {
+      return true
+    }
+  }
+  function check(){
+    let a =document.getElementById("num").value;
+    if (checkNumber(a)){
+      alert(a+" is number")
+    }else{
+      alert(a+" not is number")
+    }
+  }
+
+
+</script>
+</body>
+</html>

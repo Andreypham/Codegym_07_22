@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</title>
+</head>
+<body>
+<script>
+  let a = parseInt(prompt("Enter first number: "))
+  let b = parseInt(prompt("Enter second number: "))
+  let arr = [a,b];
+  function change(arr){
+    let temp = arr[0]
+    arr[0]= arr[1]
+    arr[1]=temp
+      return arr;
+  }
+  arr=change(arr)
+  document.writeln("First number: "+ arr[0]+"<br>")
+  document.writeln("Second number: "+ arr[1])
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</title>
+</head>
+<body>
+<input type="text" id="num">
+<br>
+<input type="button" value="Calc square and perimeter" onclick="Calc()">
+<br>
+<div id="showResult1"></div>
+<br>
+<div id="showResult2"></div>
+<script>
+  function squareCycle(a){
+    return a*a*3.14;
+  }
+  function perimeterCycle(a){
+    return a*2*3.14
+  }
+  function Calc(){
+    let a = parseInt(document.getElementById("num").value);
+    document.getElementById("showResult1").innerHTML = "Dien tich hinh tron: "+squareCycle(a)
+    document.getElementById("showResult2").innerHTML = "Chu vi hinh tron: "+perimeterCycle(a)
+  }
+</script>
+</body>
+</html>
