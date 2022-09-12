@@ -11,20 +11,23 @@
 <br>
 <div id="showResult"></div>
 <script>
+    function checkStar(in_star){
+        let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
+        let constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" ,"Leo"]
+        let boo = false;
+        for (let i=0; i<7;i++){
+            if (in_star===star[i]){
+                document.getElementById("showResult").innerHTML = constellation[i]
+                boo = true;
+            }
+        }
+        if (!boo) {
+            document.getElementById("showResult").innerHTML = "unknown"
+        }
+    }
   function check(){
-    let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
-    let constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" ,"Leo"]
-    let in_star = document.getElementById("nameStar").value;
-    let boo = false;
-    for (let i=0; i<7;i++){
-      if (in_star===star[i]){
-        document.getElementById("showResult").innerHTML = constellation[i]
-        boo = true;
-      }
-    }
-    if (!boo) {
-      document.getElementById("showResult").innerHTML = "unknown"
-    }
+      let in_star = document.getElementById("nameStar").value;
+      checkStar(in_star)
   }
 </script>
 </body>

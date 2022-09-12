@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<body>
+<form>
+  <h1>Add new product</h1>
+  <input type="text" id="newProduct">
+  <input type="button" onclick="addNew()" value="ADD" style="color: darkgreen">
+  <br>
+  <h1>Display all products</h1>
+    <div id="showResult"></div>
+</form>
+<script>
+  function addProduct(NameProduct){
+    let sout="<table>";
+    sout+="<tr>" +
+            "<td>"+NameProduct+"</td>"
+        +"<td><input type='button' onclick='edit()' value='Edit'></td>"
+        +"</tr>"+"</table>"
+      document.getElementById("showResult").innerHTML = sout
+  }
+  function addNew(){
+      addProduct(document.getElementById("newProduct").value)
+  }
+</script>
+</body>
+</html>
