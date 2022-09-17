@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<p id="result"></p>
+<br>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+  let Rectangle = function (widthRec, heightRec){
+    this.widthRec = widthRec;
+    this.heightRec = heightRec;
+
+    this.getWidthRec = function (){
+      return widthRec;
+    }
+
+    this.getHeightRec = function (){
+      return heightRec;
+    }
+
+    this.getAreaRec = function (){
+      return (widthRec*heightRec);
+    }
+
+    this.getPerimeterRec = function (){
+      return (2*(widthRec+heightRec));
+    }
+  }
+
+  function CreateRectangle(){
+      let ctx = document.getElementById("myCanvas").getContext("2d");
+      let color = getRandomColor();
+      ctx.beginPath();
+      ctx.rect(100,100,rectangle.widthRec,rectangle.heightRec)
+      ctx.fillStyle = color;
+      ctx.fill();
+  }
+
+  function getRandomHex(){
+      return Math.floor(Math.random()*255);
+  }
+
+  function getRandomColor(){
+      let red = getRandomHex();
+      let green = getRandomHex();
+      let blue = getRandomHex();
+      return "rgb(" + red + "," + blue + "," + green +")";
+  }
+
+  let rectangle = new Rectangle(300,400)
+  let width = rectangle.getWidthRec();
+  let height = rectangle.getHeightRec();
+  let area = rectangle.getAreaRec();
+  let peri = rectangle.getPerimeterRec();
+
+  document.getElementById("result").innerHTML = "Area: "+area+" Perimeter: "+peri
+  CreateRectangle()
+</script>
+</body>
+</html>

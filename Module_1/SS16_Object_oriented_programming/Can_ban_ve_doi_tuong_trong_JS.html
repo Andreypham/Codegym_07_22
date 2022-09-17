@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Căn bản về đối tượng trong JavaScript</title>
+</head>
+<body>
+<script>
+  let person = {
+    name : {
+      first: 'Bob',
+      last: 'Smith'
+    },
+    age: 32,
+    gender: 'male',
+    interests: ['music', 'skiing'],
+    bio: function() {
+      alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+    },
+    greeting: function() {
+      alert('Hi! I\'m ' + this.name.first+" "+this.name.last + '.');
+    }
+  };
+  // person.bio()
+  // person.greeting()
+
+  person.age=45;
+  // alert(person.age);
+  person['name']['last'] = 'Cratchit';
+  // alert(person.name.last);
+  person['eyes'] = 'hazel';
+  person.farewell = function() { alert("Bye everybody!"); }
+  // alert(person.eyes)
+  // person.farewell()
+  //thêm thành phần mới này với tên và giá trị cho đối tượng person
+  let myDataName = 'height';
+  let myDataValue = '1.75m';
+  person[myDataName] = myDataValue;
+  alert(person.height)
+
+</script>
+</body>
+</html>

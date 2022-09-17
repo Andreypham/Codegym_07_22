@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny circles</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+  // Bước 2: Vẽ một hình tròn đơn giản với kích thước cố định
+  function Circle(x, y, radius){
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+  }
+  function createCircle(){
+    var ctx = document.getElementById("myCanvas").getContext("2d");
+    var circle= new Circle(500, 500, 80);
+    ctx.beginPath();
+    ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+  //createCircle();
+
+  //Bước 3: Vẽ hình tròn với bán kính ngẫu nhiên
+
+  // function Circle(x, y, radius){
+  //   this.x = x;
+  //   this.y = y;
+  //   this.radius = radius;
+  // }
+  function createCircleRandom(){
+    var ctx = document.getElementById("myCanvas").getContext("2d");
+    var radius = Math.floor(Math.random() * 80);
+    var circle= new Circle(500, 500, radius);
+    ctx.beginPath();
+    ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+
+  //createCircleRandom();
+
+  // Bước 4: Vẽ hình tròn với màu ngẫu nhiên
+  // function Circle(x, y, radius){
+  //   this.x = x;
+  //   this.y = y;
+  //   this.radius = radius;
+  // }
+
+  function getRandomHex(){
+    return Math.floor(Math.random()*255);
+  }
+
+  function getRandomColor(){
+    var red = getRandomHex();
+    var green = getRandomHex();
+    var blue = getRandomHex();
+    return "rgb(" + red + "," + blue + "," + green +")";
+  }
+
+  function createCircleRanColor(){
+    var ctx = document.getElementById("myCanvas").getContext("2d");
+    var radius = Math.floor(Math.random() * 80);
+    var color = getRandomColor();
+    var circle= new Circle(500, 500, radius);
+    ctx.beginPath();
+    ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  //createCircleRanColor();
+
+  // Bước 5: Vẽ được hình tròn với vị trí ngẫu nhiên
+
+  function createCircleRanPos(){
+    var ctx = document.getElementById("myCanvas").getContext("2d");
+    var radius = Math.floor(Math.random() * 80);
+    var color = getRandomColor();
+    var x = Math.random() * window.innerWidth;
+    var y = Math.random() * window.innerHeight;
+    var circle= new Circle(x, y, radius);
+    ctx.beginPath();
+    ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  createCircleRanPos();
+  // Bước 6: Vẽ được 2 hình tròn.
+  createCircleRanPos();
+
+  // Bước 7: Tạo rất nhiều hình tròn.
+  function createMultipleCircle(){
+    for(var i = 0; i < 30; i++){
+      createCircleRanPos();
+    }
+  }
+
+  createMultipleCircle();
+</script>
+
+</body>
+</html>

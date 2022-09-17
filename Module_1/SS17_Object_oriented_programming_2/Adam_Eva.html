@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<p id="result1"></p>
+<br>
+<p id="result2"></p>
+<br>
+<p id="result3"></p>
+<br>
+<script>
+  let Apple = function (weightApple){
+    this.weightApple= weightApple
+
+    this.Decrease = function (){
+      return (this.weightApple-1)
+    }
+
+    this.isEmpty = function (){
+      return weightApple == 0 ? true : false;
+    }
+
+    this.getWeight = function (){
+      return this.weightApple
+    }
+  }
+
+  let Human = function (name, gender, weight){
+    this.name = name
+    this.gender = gender
+    this.weight = weight
+
+    this.isMale = function (){
+      if (gender==="Male") {return true}
+    }
+
+    this.setGender = function (gender){
+      this.gender = gender
+    }
+
+    this.checkApple = function (Apple){
+      return Apple.isEmpty() ? false : true;
+    }
+
+    this.eatApple = function (Apple){
+      if (this.checkApple(Apple)) {
+          Apple.Decrease()
+        return (this.weight+1)
+      }
+      else {
+        document.getElementById("result3").innerHTML = "You don't have apple"+"<br>"
+      }
+    }
+
+    this.say = function (message){
+      document.getElementById("result2").innerHTML = this.name + " say: " + message +"<br>"
+    }
+
+    this.getName = function (){
+      return this.name
+    }
+
+    this.setName = function (name){
+      this.name = name
+    }
+
+    this.getWeight = function (){
+      return this.weight
+    }
+
+    this.setWeight = function (weight){
+      this.weight = weight
+    }
+
+  }
+
+  let Adam = new Human("Adam","Male",80)
+  let Eva = new Human("Eva","Female",60)
+  let apple = new Apple(5)
+
+  // document.getElementById("result1").innerHTML = "Name: "+Adam.name +"<br>"+
+  //         "Gender: "+Adam.gender +"<br>"+ "Weight: "+ Adam.weight
+  let weiHuman = Adam.eatApple(apple)
+  let weiApple = apple.weightApple
+
+  document.getElementById("result1").innerHTML = "Weight's human: "+ weiHuman +"<br>"+
+      " Weight's Apple: "+ weiApple
+
+  Adam.say("Eva, i love u")
+
+  if (Adam.checkApple(apple)) {
+      alert(" you have apple")
+  } else {
+      alert("you don't have apple")
+  }
+
+  if (Adam.isMale()){
+      alert("Adam is male")
+  }else{
+      alert("Adam isn't male")
+  }
+
+
+</script>
+</body>
+</html>
