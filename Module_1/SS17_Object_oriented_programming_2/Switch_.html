@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>công tắc và bóng đèn</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+  let connect = false
+  class Button{
+    constructor(status,lamp) {
+      this.status = status
+      this.lamp = lamp
+    }
+    switchButton(){
+      if (this.status ==="on"){
+        this.switchOff()
+      }else{
+        this.switchOn()
+      }
+    }
+
+    connectToLamp(ElectricLamp){
+      connect = true
+      ElectricLamp.status = this.status
+    }
+
+    switchOff(){
+      this.status = "off"
+      if (connect){
+        this.connectToLamp(lamp)
+      }
+    }
+
+    switchOn(){
+      this.status = "on"
+      if (connect){
+        this.connectToLamp(lamp)
+      }
+    }
+
+    printStatus(){
+      document.getElementById("result").innerHTML += "<br> Status button: "+this.status
+    }
+  }
+
+  class ElectricLamp{
+    constructor(status) {
+        this.status = status
+    }
+    electricLamp(){
+      if (connect === true) {
+        document.getElementById("result").innerHTML += "<br> lamp connected to the button"
+      }else {
+        document.getElementById("result").innerHTML += "<br> lamp disconnected to the button"
+      }
+
+    }
+
+    printStatus(){
+      document.getElementById("result").innerHTML += "<br> Status lamp: "+this.status
+    }
+  }
+  let lamp = new ElectricLamp("on")
+  let button = new Button("off",lamp)
+
+  document.getElementById("result").innerHTML += "<br> Initialization information"
+  button.printStatus()
+  lamp.printStatus()
+  lamp.electricLamp()
+
+  document.getElementById("result").innerHTML += "<br> ---------------------------"
+  button.switchButton()
+  button.printStatus()
+  lamp.printStatus()
+
+  document.getElementById("result").innerHTML += "<br> ---------------------------"
+  button.connectToLamp(lamp)
+  lamp.electricLamp()
+  button.switchButton()
+  button.printStatus()
+  lamp.printStatus()
+
+  for (let i = 0; i < 10; i++) {
+    document.getElementById("result").innerHTML += "<br> ------------ switch "+(i+1)+" ------------"
+    button.switchButton()
+    button.printStatus()
+    lamp.printStatus()
+  }
+
+</script>
+</body>
+</html>
