@@ -7,24 +7,28 @@
 <body>
 <p id="result1"></p>
 <br>
-<p id="result2"></p>
-<br>
-<p id="result3"></p>
-<br>
 <script>
   let Apple = function (weightApple){
     this.weightApple= weightApple
 
     this.Decrease = function (){
-      return (this.weightApple-1)
+      this.weightApple = this.weightApple-1
     }
 
     this.isEmpty = function (){
-      return weightApple == 0 ? true : false;
+      if (this.weightApple ===0) {
+          return true
+      } else {
+          return false
+      }
     }
 
     this.getWeight = function (){
       return this.weightApple
+    }
+
+    this.printInfo = function (){
+        document.getElementById("result1").innerHTML += "<br>"+"Apple weight: "+ this.weightApple+"<br>"
     }
   }
 
@@ -34,7 +38,11 @@
     this.weight = weight
 
     this.isMale = function (){
-      if (gender==="Male") {return true}
+      if (this.gender==="Male") {
+          document.getElementById("result1").innerHTML += "<br>"+this.name+" is male <br>"
+      } else {
+          document.getElementById("result1").innerHTML += "<br>"+this.name+" isn't male <br>"
+      }
     }
 
     this.setGender = function (gender){
@@ -42,21 +50,26 @@
     }
 
     this.checkApple = function (Apple){
-      return Apple.isEmpty() ? false : true;
+      if (!Apple.isEmpty()){
+          document.getElementById("result1").innerHTML += "<br>Apple is available <br>"
+      }else{
+          document.getElementById("result1").innerHTML += "<br>Apple isn't available <br>"
+      }
     }
 
     this.eatApple = function (Apple){
-      if (this.checkApple(Apple)) {
+      if (!Apple.isEmpty()) {
+          document.getElementById("result1").innerHTML += "<br>"+this.name+" ate an apple <br>"
           Apple.Decrease()
-        return (this.weight+1)
+          this.weight = this.weight +1
       }
       else {
-        document.getElementById("result3").innerHTML = "You don't have apple"+"<br>"
+        document.getElementById("result1").innerHTML += "<br>You don't have apple<br>"
       }
     }
 
     this.say = function (message){
-      document.getElementById("result2").innerHTML = this.name + " say: " + message +"<br>"
+      document.getElementById("result1").innerHTML += "<br>"+ this.name + " say: " + message
     }
 
     this.getName = function (){
@@ -75,34 +88,57 @@
       this.weight = weight
     }
 
+    this.printInfo = function (){
+        document.getElementById("result1").innerHTML += "<br>"+"-----Info "+this.name+"-----"+"<br>"+"Name: "+this.name +"<br>"+
+            "Gender: "+this.gender +"<br>"+ "Weight: "+ this.weight+"<br>"+"-----------------------"
+    }
   }
 
   let Adam = new Human("Adam","Male",80)
   let Eva = new Human("Eva","Female",60)
-  let apple = new Apple(5)
+  let apple = new Apple(2)
 
-  // document.getElementById("result1").innerHTML = "Name: "+Adam.name +"<br>"+
-  //         "Gender: "+Adam.gender +"<br>"+ "Weight: "+ Adam.weight
-  let weiHuman = Adam.eatApple(apple)
-  let weiApple = apple.weightApple
+  // in thong tin
 
-  document.getElementById("result1").innerHTML = "Weight's human: "+ weiHuman +"<br>"+
-      " Weight's Apple: "+ weiApple
+  Adam.printInfo()
+  Eva.printInfo()
+  apple.printInfo()
 
+  //kiem tra con tao
+  Adam.checkApple(apple)
+
+  //Kiem tra gioi tinh
+  Adam.isMale()
+
+  // Adam va Eva an tao
+  Adam.eatApple(apple)
+  Eva.eatApple(apple)
+
+  // thong tin sau an tao
+  Adam.printInfo()
+  Eva.printInfo()
+  apple.printInfo()
+
+  //Doi thong tin Adam
+  Adam.setName("Adam Smith")
+  Adam.setGender("Female")
+  Adam.setWeight(75)
+
+  //In thong tin adam sau khi doi
+  Adam.printInfo()
+  Eva.checkApple(apple)
+
+  // Adam va Eva tro chuyen
   Adam.say("Eva, i love u")
+  Eva.say("Adam, i love u too")
 
-  if (Adam.checkApple(apple)) {
-      alert(" you have apple")
-  } else {
-      alert("you don't have apple")
-  }
+  //viet thong tin qua get
+  let name = Adam.getName()
+  let weight = Adam.getWeight()
+  document.getElementById("result1").innerHTML += "<br>"+ name + " weighs "+ weight +" kg"
 
-  if (Adam.isMale()){
-      alert("Adam is male")
-  }else{
-      alert("Adam isn't male")
-  }
-
+  Adam.isMale()
+  Eva.isMale()
 
 </script>
 </body>
