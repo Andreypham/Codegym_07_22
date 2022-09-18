@@ -8,90 +8,90 @@
 <p id="result1"></p>
 <br>
 <script>
-  let Apple = function (weightApple){
-    this.weightApple= weightApple
 
-    this.Decrease = function (){
-      this.weightApple = this.weightApple-1
-    }
-
-    this.isEmpty = function (){
-      if (this.weightApple ===0) {
-          return true
-      } else {
-          return false
+  class Apple{
+      constructor(weightApple) {
+          this.weightApple= weightApple
       }
-    }
-
-    this.getWeight = function (){
-      return this.weightApple
-    }
-
-    this.printInfo = function (){
-        document.getElementById("result1").innerHTML += "<br>"+"Apple weight: "+ this.weightApple+"<br>"
-    }
+      Decrease(){
+          this.weightApple = this.weightApple-1
+      }
+      isEmpty(){
+          if (this.weightApple ===0) {
+              return true
+          } else {
+              return false
+          }
+      }
+      getWeight(){
+          return this.weightApple
+      }
+      printInfo(){
+          document.getElementById("result1").innerHTML += "<br>"+"Apple weight: "+ this.weightApple+"<br>"
+      }
   }
 
-  let Human = function (name, gender, weight){
-    this.name = name
-    this.gender = gender
-    this.weight = weight
-
-    this.isMale = function (){
-      if (this.gender==="Male") {
-          document.getElementById("result1").innerHTML += "<br>"+this.name+" is male <br>"
-      } else {
-          document.getElementById("result1").innerHTML += "<br>"+this.name+" isn't male <br>"
+  class Human{
+      constructor(name, gender, weight) {
+          this.name = name
+          this.gender = gender
+          this.weight = weight
       }
-    }
-
-    this.setGender = function (gender){
-      this.gender = gender
-    }
-
-    this.checkApple = function (Apple){
-      if (!Apple.isEmpty()){
-          document.getElementById("result1").innerHTML += "<br>Apple is available <br>"
-      }else{
-          document.getElementById("result1").innerHTML += "<br>Apple isn't available <br>"
+      isMale(){
+          if (this.gender==="Male") {
+              document.getElementById("result1").innerHTML += "<br>"+this.name+" is male <br>"
+          } else {
+              document.getElementById("result1").innerHTML += "<br>"+this.name+" isn't male <br>"
+          }
       }
-    }
 
-    this.eatApple = function (Apple){
-      if (!Apple.isEmpty()) {
-          document.getElementById("result1").innerHTML += "<br>"+this.name+" ate an apple <br>"
-          Apple.Decrease()
-          this.weight = this.weight +1
+      setGender(gender){
+          this.gender = gender
       }
-      else {
-        document.getElementById("result1").innerHTML += "<br>You don't have apple<br>"
+
+      checkApple(Apple){
+          if (!Apple.isEmpty()){
+              document.getElementById("result1").innerHTML += "<br>Apple is available <br>"
+          }else{
+              document.getElementById("result1").innerHTML += "<br>Apple isn't available <br>"
+          }
       }
-    }
 
-    this.say = function (message){
-      document.getElementById("result1").innerHTML += "<br>"+ this.name + " say: " + message
-    }
+      eatApple(Apple){
+          if (!Apple.isEmpty()) {
+              document.getElementById("result1").innerHTML += "<br>"+this.name+" ate an apple <br>"
+              Apple.Decrease()
+              this.weight = this.weight +1
+          }
+          else {
+              document.getElementById("result1").innerHTML += "<br>You don't have apple<br>"
+          }
+      }
 
-    this.getName = function (){
-      return this.name
-    }
+      say(message){
+          document.getElementById("result1").innerHTML += "<br>"+ this.name + " say: " + message
+      }
 
-    this.setName = function (name){
-      this.name = name
-    }
+      getName(){
+          return this.name
+      }
 
-    this.getWeight = function (){
-      return this.weight
-    }
+      setName(name){
+          this.name = name
+      }
 
-    this.setWeight = function (weight){
-      this.weight = weight
-    }
+      getWeight(){
+          return this.weight
+      }
 
-    this.printInfo = function (){
-        document.getElementById("result1").innerHTML += "<br>"+"-----Info "+this.name+"-----"+"<br>"+"Name: "+this.name +"<br>"+
-            "Gender: "+this.gender +"<br>"+ "Weight: "+ this.weight+"<br>"+"-----------------------"
-    }
+      setWeight(weight){
+          this.weight = weight
+      }
+
+      printInfo(){
+          document.getElementById("result1").innerHTML += "<br>"+"-----Info "+this.name+"-----"+"<br>"+"Name: "+this.name +"<br>"+
+              "Gender: "+this.gender +"<br>"+ "Weight: "+ this.weight+"<br>"+"-----------------------"
+      }
   }
 
   let Adam = new Human("Adam","Male",80)
