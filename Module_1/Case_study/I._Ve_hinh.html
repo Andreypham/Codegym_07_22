@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m theo hình dưới đây. </title>
+</head>
+<body>
+<script>
+  let x=4
+  let y=6
+  for (let i = 0; i < x; i++) {
+    for (let j = 0; j < y; j++) {
+      if ((i===0)||(i===x-1)) {
+        document.writeln("*")
+      }else{
+        if ((j===0)||(j===y-1)) {
+          document.writeln("*")
+        } else{
+          document.writeln("&nbsp&nbsp")
+        }
+      }
+    }
+    document.writeln("<br>")
+    
+  }
+
+  let h = 5
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < i+1; j++) {
+      if ((j===0)||(i===h-1)||(i===j)){
+        document.writeln("*")
+      }else{
+        if (j<i){
+          document.writeln("&nbsp&nbsp")
+        }
+      }
+    }
+    document.writeln("<br>")
+  }
+
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < h-i-1; j++){
+        document.writeln("&nbsp&nbsp")
+    }
+    for (let j = h-i; j < h+i+1; j++) {
+      document.writeln("*")
+    }
+    document.writeln("<br>")
+  }
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < h-i-1; j++){
+      document.writeln("&nbsp&nbsp")
+    }
+    for (let j = h-i; j < h+i+1; j++) {
+      if ((j===h-i)||(j===h+i)||(i===h-1)){
+        document.writeln("*")
+      } else{
+        document.writeln("&nbsp&nbsp")
+      }
+    }
+    document.writeln("<br>")
+  }
+
+
+
+
+</script>
+
+</body>
+</html>
