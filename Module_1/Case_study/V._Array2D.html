@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n.
+  Với m, n là các số nhập từ bàn phím.
+Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số
+nguyên tố có trong mảng đó.
+Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+
+   */
+  let a = [
+    [1, 2, 14, 24],
+    [8, 11, 9, 4],
+    [7, 0, 13, 27],
+    [6, 4, 28, 14],
+    [3, 10, 26, 5]
+  ];
+
+  function sumEven(arr){
+    let n = arr[0].length
+    let m = arr.length
+    let sum = 0
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        if (arr[i][j]%2===0){
+          sum += arr[i][j]
+        }
+      }
+    }
+    return sum
+  }
+  document.writeln("Sum even number: "+sumEven(a))
+
+  function check_prime(number){
+    let count = 0;
+    let num = Math.floor(Math.sqrt(number));
+    for (let i=1;i<=num;i++){
+      if (number%i ===0){
+        count = count +1;
+      }
+    }
+    return count === 1;
+  }
+
+  function listPrime(arr){
+    let n = arr[0].length
+    let m = arr.length
+    let c=[]
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        if(check_prime(a[i][j])){
+          c.push(a[i][j])
+        }
+      }
+    }
+    document.writeln("<br>"+"Count prime: "+ c.length + "<br>"+ "Primes: " + c )
+  }
+
+  listPrime(a)
+
+  function findMax(arr){
+    let n = arr[0].length
+    let m = arr.length
+    let max = a[0][0]
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        if (a[i][j]>max){
+          max = a[i][j]
+        }
+      }
+    }
+    return max
+  }
+
+  function findMin(arr){
+    let n = arr[0].length
+    let m = arr.length
+    let min = a[0][0]
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        if (a[i][j]<min){
+          min = a[i][j]
+        }
+      }
+    }
+    return min
+  }
+
+  document.writeln("<br> Max: "+ findMax(a) + " Min: "+ findMin(a))
+
+
+
+</script>
+</body>
+</html>

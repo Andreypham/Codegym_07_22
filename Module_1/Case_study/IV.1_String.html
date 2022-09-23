@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong
+  xâu không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa. Ví dụ
+  tRuong    TaN   HAI => Truong Tan Hai.
+Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu
+ký tự từ bàn phím, in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
+   */
+
+  let name = "    phan NHAT tUan"
+  function standard (str){
+      let thuong = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","y","w"]
+      let hoa = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","Y","W"]
+      let newStr =[str[0],]
+      for (let i = 1; i < str.length; i++) {
+          if (((str[i-1]!==" ")&(str[i]===" "))||(str[i]!==" ")) {
+              newStr.push(str[i])
+          }
+      }
+      if (newStr[0]!==" "){
+          let t = thuong.indexOf(newStr[0])
+          if (t!==-1) {
+              newStr[0] = hoa[t]
+          }
+
+      }
+      for (let i = 0; i < newStr.length-1; i++){
+          if (newStr[i]===" "){
+              let t = thuong.indexOf(newStr[i+1])
+              if (t!==-1) {
+                  newStr[i+1] = hoa[t]
+              }
+          }else{
+              let h = hoa.indexOf(newStr[i+1])
+              if (h!==-1){
+                  newStr[i+1]= thuong[h]
+              }
+          }
+      }
+      newStr = newStr.join("")
+      document.writeln(newStr+"<br>")
+
+  }
+  standard(name)
+
+
+</script>
+</body>
+</html>
